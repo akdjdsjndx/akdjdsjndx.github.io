@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-11HC 世界观背景</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* 背景故事页面专属样式 */
+        body {
+            background: linear-gradient(to bottom, #0a0a1a 0%, #1a1a2e 30%, #16213e 100%);
+            color: #f0f0f0;
+        }
+        
+        .container {
+            background: rgba(26, 26, 46, 0.85);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(65, 90, 119, 0.3);
+        }
+        
+        .background-hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            margin: -30px -30px 40px -30px;
+            border-radius: 8px 8px 0 0;
+            border-bottom: 3px solid #9d0208;
+        }
+        
+        .background-hero h1 {
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            color: #f0f0f0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .background-hero p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            color: #cccccc;
+        }
+        
+        h2 {
+            color: #e0e0e0;
+            border-bottom: 2px solid rgba(139, 0, 0, 0.5);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 4px solid #9d0208;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(65, 90, 119, 0.4);
+        }
+        
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: #ff6b6b;
+            font-size: 1.1em;
+            background: rgba(157, 2, 8, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 1px solid rgba(157, 2, 8, 0.5);
+            text-shadow: 
+                1px 1px 0 #000,
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                0 0 3px #000;
+        }
+        
+        .timeline-title {
+            font-size: 1.4em;
+            color: #f0f0f0;
+            margin: 0;
+        }
+        
+        .timeline-content {
+            color: #e0e0e0;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+        
+        .timeline-content p {
+            color: #dddddd;
+        }
+        
+        .category-section {
+            margin: 40px 0;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            border: 1px solid rgba(65, 90, 119, 0.4);
+        }
+        
+        .category-section h3 {
+            color: #e0e0e0;
+            margin-top: 0;
+            border-bottom: 1px solid rgba(119, 141, 169, 0.5);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .category-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid rgba(65, 90, 119, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .category-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-3px);
+        }
+        
+        .category-card h4 {
+            color: #e0e0e0;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .category-card p {
+            color: #cccccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #1b263b;
+            color: #cccccc;
+            padding: 12px 25px;
+            font-size: 1em;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid #415a77;
+            margin-top: 30px;
+        }
+        
+        .back-button:hover {
+            background: #0d1b2a;
+            color: #f0f0f0;
+            border-color: #9d0208;
+        }
+        
+        .world-logo {
+            text-align: center;
+            margin: 20px 0 40px;
+        }
+        
+        .world-logo img {
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .placeholder-logo {
+            width: 300px;
+            height: 200px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 2px solid #415a77;
+            border-radius: 8px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cccccc;
+            font-size: 1.2em;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .oc-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        /* 修改OC卡片为可点击链接 */
+        .oc-card-link {
+            display: block;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(65, 90, 119, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .oc-card-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(157, 2, 8, 0.5);
+        }
+        
+        .oc-card-link::after {
+            content: "点击查看档案 →";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(157, 2, 8, 0.8);
+            color: white;
+            text-align: center;
+            padding: 5px;
+            font-size: 0.8em;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .oc-card-link:hover::after {
+            transform: translateY(0);
+        }
+        
+        .oc-card-link h4 {
+            color: #e0e0e0;
+            margin-top: 0;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .oc-card-link:hover h4 {
+            color: #ffffff;
+        }
+        
+        .oc-card-link .oc-id {
+            color: #ff6b6b;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            text-shadow: 
+                1px 1px 0 #000,
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                0 0 2px #000;
+            transition: color 0.3s ease;
+        }
+        
+        .oc-card-link:hover .oc-id {
+            color: #ff8e8e;
+        }
+        
+        /* 确保所有文本都是浅色 */
+        p, li, td, th, span {
+            color: #dddddd;
+        }
+        
+        /* 特殊强调文本 */
+        strong {
+            color: #ffffff;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .timeline-date {
+                margin-bottom: 10px;
+            }
+            
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .oc-members {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="background-hero">
+            <h1>B-11HC 世界观背景</h1>
+            <p>原初音频、诡异时代、人类最后的挣扎——这一切的起源与终结</p>
+        </div>
+        
+        <div class="world-logo">
+            <div class="placeholder-logo">
+                世界观Logo<br>(待补充)
+            </div>
+        </div>
+        
+        <h2>世界观概述</h2>
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <p><strong>突然出现的原初音频给人类带来了另外一种全新的道路</strong>，科学家们兴奋的，夜以继日的研究祂，直到一句随口的话语之后，世界开始了第一次诡异爆发。</p>
+                <p>全世界陷入了各种困境之中，人类曾经骄傲的热武器对这些各种各样的诡异而言只是一阵清风。</p>
+                <p>全世界联合在一起，在海洋上建立了最后的四座城市。</p>
+                <p>陆地变成了一座巨大的牢笼，连活着都是问题时，摇篮计划已经变成了一个无法实现的梦。</p>
+        
+        <h2>时间线事件</h2>
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">原初音频</h3>
+                    <span class="timeline-date">2031.1.1 - 2031.1.1</span>
+                </div>
+                <div class="timeline-content">
+                    <p>2月1日，俄国境内有人发现了一个奇怪的黑方块。这个巨大的黑方块长宽高均为11m。目视过去像极了正在翻涌的黑洞，内部一直不停的旋转着浓重的雾气，俄国的科学家们各种各样的研究，什么都没有发现。</p>
+                    <p>风吹雨打，冰冻火烤，冷兵器撞击，热武器射击，电能冲击，激光切割。一切人类科技中含有的攻击手段都无法对这个黑方块造成损伤。</p>
+                    <p>5月17日，无法找寻到解决方法的俄国看着这个已经增长到14m的东西，无奈的向全世界宣布，希望科学家们找到解决办法。</p>
+                    <p>8月28日，一位菲国籍科学家，在一个手搓的矿石收音机中检测到了不明音频，他没有将这0.15秒的音频当做噪音无视掉，而是和俄国交谈。</p>
+                    <p>29日，俄国科学家通过更高级的收音机，无线电台，和最原始的矿石收音机中。发现这一段音频似乎只存在矿石收音机中。</p>
+                    <p>11月11日，通过放大器和音频转接系统，科学家成功在电脑中读取了这一段音频。</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">初号机</h3>
+                    <span class="timeline-date">2032.1.1 - 2032.1.1</span>
+                </div>
+                <div class="timeline-content">
+                    <p>他们从电脑中播放了这一段音频。是一个"喂？"在播放音频后的十一分十一秒，黑方块在以肉眼可见的速度缩小直到黑方块便消失不见。</p>
+                    <p>这个最初用来转接的矿石收音机变成了原初音频的承载物。</p>
+                    <p>人们目视到被附着的矿石收音机变为和黑方块一样的外观，一样的旋转黑云，但本体依旧保持着收音机的大小和形状。</p>
+                    <p>在一切毫无反应的11天之后，收音机在中午11点11分发出了人类可以识别出的，46分贝的的疲惫女人的声音。这个声音使用俄语说了一句"还好吗？"。并中断了链接。</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">诡异时代爆发</h3>
+                    <span class="timeline-date">2034.1.1 - 2034.1.1</span>
+                </div>
+                <div class="timeline-content">
+                    <p>不得不说，人类真的是一种很擅长作死的生物。</p>
+                    <p>一开始，对于原初音频的问候，人们表现出了极端的恐惧以及谨慎。人们开始有限度的反问："我很好，你呢。""你是谁。""发生什么了？"但无论怎么说或者反问，收音机都没有给予任何的回复。</p>
+                    <p>但是如果没有人回应她，那么收音机的询问会每隔1分钟重新问一遍，直到持续11次询问。如果11分钟后还没有回复，那么收音机将会再次陷入沉默。直到下一个11天到来。经历过一次拒绝回复的原初音频音量增长到了116分贝并且极其失真断音。</p>
+                    <p>现场人员立刻回复了这次的原初音频。收音机不在发出声音，而转变为了9分31秒的无意义电流声，多方研究人员通过倒带，转码，转图片，仍未解答出任何信息。</p>
+                    <p>在第34次回复中，一位名叫博罗夫捏金的科研人员，对原初音频发出了一个抱怨："不是很好，最近天气太冷了。"在这句话说完后的11分钟里。在世界各国里，人类事后统计的共计11689个房子，从无人居住的废弃房屋，到充斥游客的大型商场，在瞬间发生了充斥黑色火光的爆鸣和共计31509人的失踪。只留下了11689个大小不一的黑色的令人不安的黑色巨蛋。</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">大崩坏</h3>
+                    <span class="timeline-date">2042.1.1 - 2042.1.1</span>
+                </div>
+                <div class="timeline-content">
+                    <p>兹....兹兹......请注意，请注意。这里是炎国龙门人民政府最后的消息。请所有的炎国人民注意。</p>
+                    <p>炎国人民共和国中央广播电视台。炎国人民共和国中央广播电视台。炎国人民共和国中央广播电视台。</p>
+                    <p>现在向各省，自治区，直辖市，特别行政区，新疆生产建设兵团以台湾改造建设兵团播报紧急避险通知。</p>
+                    <p>国家已经遭受重大灾难，基础设施遭受重大打击，部分国家机构已经失去能力。现在进行国家最高动员，重复，现在进行国家最高动员。号召所有人民群众，开展自救互救运动，请广大人民群众立即寻找离自己最近的基层组织，党组织。人民武装部以及民兵组织寻求帮助。尽一切可能帮助其他群众。</p>
+                    <p>离开时请注意查看道路，输电设备，铁路设施，通信基站，光缆，房屋，农田等基础资源和设施的损毁情况，及时上报到附近基层组织。</p>
+                    <p>广大人民群众要积极组织灾后重建活动，灾变情况下，我们必须团结一切能够团结的力量，组成灾后重建统一战线。如无法及时的组织起重建活动，群众应尽量呆在原地，维持个人存活，等待，消防，解放军，武警或紧急救援队。</p>
+                    <p>各下级党组织，应积极发挥战斗堡垒的作用，党员应主动迎难而上，发挥先锋模范作用，不忘初心，牢记使命。竭尽全力维护群众利益，组织群众进行生产自救，不怕牺牲是党员的义务与责任，更是我们对人民的庄严承诺。</p>
+                    <p>广大人民群众还要严防犯罪行为，坚决反对利用国难盗取破坏国家公共财产和其他公民个人财产的行为。法律在任何时间！任何情况下都具有效力！以上信息请广大人民群众相互转告。最后！人民万岁！中共中央，国务院，中央军委联合宣布。</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">摇篮计划</h3>
+                    <span class="timeline-date">2077.1.1 - 2077.1.1</span>
+                </div>
+                <div class="timeline-content">
+                    <p>放弃地球，飞往宇宙</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">银幕</h3>
+                    <span class="timeline-date">2089.1.1 - 2089.1.1</span>
+                </div>
+                <div class="timeline-content">
+                    <p>宇宙是假的</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">记录器使用</h3>
+                    <span class="timeline-date">2089.1.1 - 2089.1.1</span>
+                </div>
+                <div class="timeline-content">
+                    <p>我是李-梅格里-九川湖上博士。是放弃了地球的，2089年后活着的最后一个古人类。我目前正在月球背面基地中。目视地球已经变成五颜六色的正方体。阳光先生于8分钟前地堡最后一批人类死亡后熄灭。</p>
+                    <p>安全屋以切割状的形状横插在方块地球上，我感觉到保护手册的力量全都聚在我上，依靠人类文明火种法案的加持，我甚至可以赤裸身体在太空里行动。</p>
+                    <p>记录：地球毁灭原因。1111号异常：彩虹网络。一台古代机械革命6代移动笔记本，每次开机会随机出现一个颜色的按钮，每种颜色的按钮拥有不同的效果，实验体按下了未出现过的按钮：旋转的星空构成的拉杆。人类在七天内死了。</p>
+                    <p>新希望号船员疯了。火星信号塔失去联络。我已经联系不到任何一个人，所以我将使用记录器。将本宇宙时间线推动，返回到三十年前的记录点，并将数据库送过去。</p>
+                </div>
+            </div>
+         </div>
+        
+        <h2>OC成员</h2>
+        <div class="oc-members">
+            <!-- 0112-重启人生卡片 -->
+            <a href="GA0112.html" class="oc-card-link">
+                <div class="oc-id">0112-重启人生（自设）</div>
+                <h4>重启人生</h4>
+            </a>
+            
+            <!-- 1939-猫妈妈卡片 -->
+            <a href="GA1939.html" class="oc-card-link">
+                <div class="oc-id">1939-猫妈妈</div>
+                <h4>猫妈妈</h4>
+            </a>
+            
+            <!-- 2425-宠溺神明卡片 -->
+            <a href="GA2425.html" class="oc-card-link">
+                <div class="oc-id">2425-宠溺神明</div>
+                <h4>宠溺神明</h4>
+            </a>
+        </div>
+        
+        <h2>异常分类</h2>
+        <div class="category-section">
+            <h3>异常分类法案</h3>
+            <p>首先对异常进行解析，解析完成后按照规则类型以及出现情况进行复刻。然后开始在基础上进行分类。（排除掉无法记录的，不能直视的，无法呼唤的）</p>
+            
+            <div class="category-grid">
+                <div class="category-card">
+                    <h4>复数存在</h4>
+                    <p>可以复数出现或被随意复刻的</p>
+                </div>
+                
+                <div class="category-card">
+                    <h4>唯一存在</h4>
+                    <p>只有一个存在，当一个个体开始爆发时，无法出现第二个或复刻召唤</p>
+                </div>
+                
+                <div class="category-card">
+                    <h4>常规级</h4>
+                    <p>无法对人类造成伤害，负面影响较低，不用支付代价也可完成的诡异</p>
+                </div>
+                
+                <div class="category-card">
+                    <h4>深刻级</h4>
+                    <p>可以更改物质构成，扭曲基础逻辑，大范围迅速传播，造成影响恶劣，必须支付一些代价才能使用的诡异</p>
+                </div>
+                
+                <div class="category-card">
+                    <h4>毁灭级</h4>
+                    <p>动用大量人力物力探明，扭曲大范围内情况，影响极端，一旦爆发损伤严重，需要支付昂贵的代价，定时更新收容所的诡异</p>
+                </div>
+                
+                <div class="category-card">
+                    <h4>捉弄级</h4>
+                    <p>一些某种情况下具备毁灭世界的能力，开启方式及其愚弄，代价各不相同，具备针对其他诡异的异常</p>
+                </div>
+                
+                <div class="category-card">
+                    <h4>用户</h4>
+                    <p>会按照规则自行演化</p>
+                </div>
+                
+                <div class="category-card">
+                    <h4>系统</h4>
+                    <p>按照规则自行运行</p>
+                </div>
+                
+                <div class="category-card">
+                    <h4>诡异</h4>
+                    <p>可以进行交流，存在理智，可以自主或人为进行迁移</p>
+                </div>
+                
+                <div class="category-card">
+                    <h4>异常物</h4>
+                    <p>无法进行交流，不存在理智，只能被人为转移，不开启就毫无怪异感</p>
+                </div>
+                
+                <div class="category-card">
+                    <h4>异象</h4>
+                    <p>无法人为转移，大范围存在，可被现实稳固锚削弱</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="../index.html" class="back-button">← 返回档案目录</a>
+        </div>
+        
+        <footer style="margin-top: 40px; text-align: center; color: #888; font-size: 0.9em;">
+            <p>本档案库遵循基金会保密协议。未经授权访问将被记录。</p>
+        </footer>
+    </div>
+</body>
+</html>
