@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>档案 - 1939-猫妈妈 | 异物表</title>
+    <style>
+        /* 全局样式 - 保持与主页一致 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a14;
+            color: #e0e0e0;
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(28, 58, 112, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(112, 28, 58, 0.1) 0%, transparent 20%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 返回按钮 */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 10px 20px;
+            background: rgba(41, 41, 68, 0.7);
+            color: #8ab4f8;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #3a3a5d;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .back-button:hover {
+            background: rgba(56, 56, 92, 0.9);
+            transform: translateY(-2px);
+        }
+        
+        /* 档案卡片 - 与主页相似 */
+        .archive-card {
+            background: rgba(18, 18, 32, 0.85);
+            border-radius: 12px;
+            border: 1px solid #2a2a4a;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #1a1a3a 0%, #2a1a3a 100%);
+            padding: 25px 30px;
+            border-bottom: 2px solid #8b0000;
+            text-align: center;
+        }
+        
+        .card-title {
+            font-size: 2.2em;
+            color: #fff;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        
+        .card-subtitle {
+            font-size: 1.1em;
+            color: #aaa;
+            font-style: italic;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .card-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        .meta-item {
+            background: rgba(139, 0, 0, 0.2);
+            padding: 6px 15px;
+            border-radius: 20px;
+            border: 1px solid rgba(139, 0, 0, 0.5);
+            font-size: 0.9em;
+        }
+        
+        /* 内容区域 */
+        .content-section {
+            padding: 30px;
+            text-align: center; /* 全局居中 */
+        }
+        
+        .section-title {
+            font-size: 1.6em;
+            color: #8ab4f8;
+            margin: 35px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333355;
+            position: relative;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: #8b0000;
+        }
+        
+        /* 描述框 */
+        .description-box {
+            background: rgba(30, 30, 50, 0.6);
+            border-left: 4px solid #8ab4f8;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 0 8px 8px 0;
+            max-width: 900px;
+            text-align: center;
+        }
+        
+        /* 警告框 */
+        .warning-box {
+            background: rgba(139, 0, 0, 0.15);
+            border: 1px solid rgba(139, 0, 0, 0.5);
+            padding: 20px;
+            margin: 25px auto;
+            border-radius: 8px;
+            max-width: 900px;
+            text-align: center;
+        }
+        
+        .warning-title {
+            color: #ff6b6b;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        
+        /* 表格样式 */
+        .info-table {
+            width: 100%;
+            max-width: 900px;
+            margin: 25px auto;
+            border-collapse: collapse;
+            background: rgba(25, 25, 40, 0.7);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333355;
+            text-align: center;
+        }
+        
+        .info-table th {
+            background: rgba(42, 42, 68, 0.9);
+            color: #8ab4f8;
+            padding: 15px;
+            font-weight: 600;
+            border-bottom: 2px solid #8b0000;
+            text-align: center;
+        }
+        
+        .info-table td {
+            padding: 15px;
+            border-bottom: 1px solid #333355;
+            vertical-align: top;
+            text-align: center;
+        }
+        
+        .info-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .info-table tr:hover {
+            background: rgba(40, 40, 60, 0.5);
+        }
+        
+        /* 作息表 */
+        .schedule-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 25px auto;
+            text-align: center;
+        }
+        
+        .schedule-item {
+            background: rgba(30, 30, 50, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #333355;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        
+        .schedule-item:hover {
+            transform: translateY(-5px);
+            border-color: #8ab4f8;
+        }
+        
+        .time-slot {
+            color: #8ab4f8;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            text-align: center;
+        }
+        
+        /* 阶段指示器 */
+        .stage-indicator {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin: 5px;
+            text-align: center;
+        }
+        
+        .stage-safe {
+            background: rgba(0, 128, 0, 0.2);
+            border: 1px solid rgba(0, 128, 0, 0.5);
+            color: #90ee90;
+        }
+        
+        .stage-warning {
+            background: rgba(255, 165, 0, 0.2);
+            border: 1px solid rgba(255, 165, 0, 0.5);
+            color: #ffcc80;
+        }
+        
+        .stage-danger {
+            background: rgba(255, 0, 0, 0.2);
+            border: 1px solid rgba(255, 0, 0, 0.5);
+            color: #ff6b6b;
+        }
+        
+        /* 脚注 */
+        .footer-note {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333355;
+            color: #888;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .card-title {
+                font-size: 1.8em;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .schedule-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-table {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 返回按钮 -->
+        <a href="../index.html" class="back-button">← 返回档案目录</a>
+        
+        <!-- 档案卡片 -->
+        <div class="archive-card">
+            <!-- 卡片头部 -->
+            <div class="card-header">
+                <h1 class="card-title">档案 #1939 - "猫妈妈"</h1>
+                <p class="card-subtitle">唯一已知个体 · 类人猫形异常实体 · 规则型威胁</p>
+                
+                <div class="card-meta">
+                    <span class="meta-item">项目等级: Euclid</span>
+                    <span class="meta-item">性别: 女</span>
+                    <span class="meta-item">种族: 异常生物</span>
+                    <span class="meta-item">身高: 2.2m</span>
+                </div>
+            </div>
+            
+            <!-- 内容区域 -->
+            <div class="content-section">
+                <!-- 描述部分 -->
+                <h2 class="section-title">📝 实体描述</h2>
+                <div class="description-box">
+                    <p>1939号异常生物，代号"猫妈妈"，是一个高约2.2米的类人实体，具有白色的酷似火柴人的身躯，顶着一个光滑的缅因猫头颅。</p>
+                    <p>该实体目前为唯一已知个体，未发现第二例。首次出现在德克萨斯州的一所孤儿院中，对全球范围内名称为"阳光孤儿院"的建筑会产生特殊反应，无论语言或实际用途。</p>
+                </div>
+                
+                <!-- 特殊收容措施 -->
+                <h2 class="section-title">⚠️ 特殊收容措施</h2>
+                <div class="warning-box">
+                    <div class="warning-title">Se A级协议</div>
+                    <p>在任何非阳光孤儿院外的地方，禁止一切与猫妈妈的交流，包括回应其要求和话语。</p>
+                </div>
+                
+                <div class="description-box">
+                    <p>1. 建立一个符合其定义的"完美阳光孤儿院"，并对全球同名建筑进行系统性更名（理由为"名称重复"）。</p>
+                    <p>2. 安排至少8名测试人员进行轮换驻守（最佳轮换期5天，最长不得超过7天）。</p>
+                    <p>3. 所有行为逻辑必须通过口述方式宣讲至少2次，严禁任何文字记录被猫妈妈目视。</p>
+                </div>
+                
+                <!-- 完整行为逻辑表 -->
+                <h2 class="section-title">🔒 完整行为逻辑表</h2>
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th>规则编号</th>
+                            <th>触发条件</th>
+                            <th>行为逻辑</th>
+                            <th>后果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>规则A1</td>
+                            <td>手持危险物品（刀具、枪械、化学试剂等）</td>
+                            <td>当猫妈妈在24米范围内时</td>
+                            <td>立即进入<span class="stage-indicator stage-warning">阶段2</span></td>
+                        </tr>
+                        <tr>
+                            <td>规则A2</td>
+                            <td>与陌生人交流</td>
+                            <td>无法说出对方姓名的情况下进行任何形式交流</td>
+                            <td>立即进入<span class="stage-indicator stage-warning">阶段2</span></td>
+                        </tr>
+                        <tr>
+                            <td>规则A3</td>
+                            <td>作息表违反</td>
+                            <td>未严格按照当日作息表生活</td>
+                            <td>进入<span class="stage-indicator stage-warning">阶段2</span></td>
+                        </tr>
+                        <tr>
+                            <td>逻辑B</td>
+                            <td>阳光孤儿院内无其他生物</td>
+                            <td>符合定义的阳光孤儿院</td>
+                            <td>立即迁移至最近符合条件的建筑</td>
+                        </tr>
+                        <tr>
+                            <td>迁移规则</td>
+                            <td>迁移过程中遇见符合条件的未成年人</td>
+                            <td>年龄&lt;16岁，性别无后天更改</td>
+                            <td>可能在路边等待并尝试互动</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- 阳光孤儿院定义 -->
+                <h2 class="section-title">🏠 "阳光孤儿院"定义标准</h2>
+                <div class="description-box">
+                    <p>猫妈妈认知中的"阳光孤儿院"必须包含以下所有要素：</p>
+                    <p>1. 一幢占地不小于220平方米的房屋（必须包含阁楼、中空型多层仓库或图书馆内层二楼）</p>
+                    <p>2. 一片不小于100平方米的平地（可包含配套设施）</p>
+                    <p>3. 将上述区域完全围合的围墙</p>
+                    <p>4. 不少于2个出入口（必须包含"门"装置）</p>
+                </div>
+                
+                <!-- 完整作息时间表 -->
+                <h2 class="section-title">🕒 完整作息时间表</h2>
+                <div class="schedule-container">
+                    <div class="schedule-item">
+                        <div class="time-slot">04:00 - 05:00</div>
+                        <p>接收当日作息表消息</p>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time-slot">05:00 - 08:30</div>
+                        <p>必须停留在床上</p>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time-slot">08:45 - 08:50</div>
+                        <p>抵达餐桌并坐好（是否进食可选）</p>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time-slot">09:20 - 10:00</div>
+                        <p>学习时间</p>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time-slot">10:01 - 12:00</div>
+                        <p>个性化活动（每人不同，可能是玩耍或协助猫妈妈）</p>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time-slot">12:05 - 12:45</div>
+                        <p>午餐时间，必须抵达餐桌</p>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time-slot">12:45 - 14:35</div>
+                        <p>午休时间，必须呆在床上</p>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time-slot">14:35 - 18:00</div>
+                        <p>随机安排2-4个活动事项</p>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time-slot">18:05 - 19:00</div>
+                        <p>晚餐时间</p>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time-slot">19:00 - 22:00</div>
+                        <p>自由活动时间（3.5小时）</p>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="time-slot">22:00</div>
+                        <p>熄灯时间，必须对猫妈妈说"晚安"以获得晚安吻</p>
+                    </div>
+                </div>
+                
+                <!-- 阶段性表现 -->
+                <h2 class="section-title">📈 阶段性行为表现</h2>
+                
+                <div class="description-box">
+                    <h3 style="color: #90ee90; margin-bottom: 10px; text-align: center;">
+                        <span class="stage-indicator stage-safe">阶段1：常态</span>
+                    </h3>
+                    <p>无意义漫游，进行家庭主妇活动（烹饪、清洁等）。初次遇见会进行4秒抚摸。完美遵守作息并在22:00说"晚安"可获得"晚安吻"，持有者次日可获得一个未知"机会"。</p>
+                </div>
+                
+                <div class="description-box">
+                    <h3 style="color: #ffcc80; margin-bottom: 10px; text-align: center;">
+                        <span class="stage-indicator stage-warning">阶段2：警告状态</span>
+                    </h3>
+                    <p>停止一切活动寻找目标。每5分16秒未找到，呼唤声提高26分贝。找到后进行10分钟说教（通过任何可行方式传达）。三次增幅未找到、或一天内触发三次阶段2、或凌晨5点前未找到目标、或进行镜子实验，将立即进入阶段3。</p>
+                </div>
+                
+                <div class="description-box">
+                    <h3 style="color: #ff6b6b; margin-bottom: 10px; text-align: center;">
+                        <span class="stage-indicator stage-danger">阶段3：危险状态</span>
+                    </h3>
+                    <p>猫妈妈会立即拿起附近刀具开始搜寻目标。此阶段极危险，必须立即启动紧急收容协议。</p>
+                </div>
+                
+                <!-- 特殊注意事项 -->
+                <h2 class="section-title">📋 特殊注意事项</h2>
+                <div class="warning-box">
+                    <div class="warning-title">紧急情况识别</div>
+                    <p>如某地一夜之间出现超过5人失踪案，立即怀疑猫妈妈事件。如猫妈妈已在收容中，需执行FAK协议。</p>
+                </div>
+                
+                <div class="description-box">
+                    <p>• 测试人员补充：ARR OAE MM BITE BIT6A后必须立即补充8人，否则只能在每天3点通过大门补充</p>
+                    <p>• 晚安吻效果：持有者第二天可以获得一个"机会"，具体性质未知</p>
+                    <p>• 镜子实验：会导致立即进入阶段3，严禁进行</p>
+                </div>
+                
+                <!-- 页脚 -->
+                <div class="footer-note">
+                    <p>档案最后更新：████-██-██ | 保密等级：4级 | 访问记录已保存</p>
+                    <p>© 异物表档案库 - 未经授权禁止复制、传播或修改</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="../script.js"></script>
+</body>
+</html>

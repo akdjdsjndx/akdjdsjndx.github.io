@@ -1,0 +1,124 @@
+/* style.css - 更新版 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 全局水平居中 */
+    padding: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.03"><path d="M0,0 L100,100 M100,0 L0,100" stroke="gray"/></svg>');
+}
+
+/* 主容器居中 */
+.container {
+    width: 100%;
+    max-width: 900px; /* 控制最大宽度，保证居中且不会过宽 */
+    margin: 20px auto; /* 上下留白，左右自动实现居中 */
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-top: 6px solid #8b0000;
+}
+
+/* 返回链接 */
+.back-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #7b8a8b;
+    text-decoration: none;
+    font-size: 0.95em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+.back-link:hover {
+    color: #8b0000;
+    background-color: #fdf2f2;
+}
+
+/* 档案标题区域 */
+.archive-header {
+    text-align: center; /* 标题区内容居中 */
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 25px;
+    margin-bottom: 35px;
+}
+.archive-header h1 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 2.2em;
+    letter-spacing: -0.5px;
+}
+.meta-info {
+    display: flex;
+    justify-content: center; /* 元信息居中 */
+    flex-wrap: wrap;
+    gap: 25px;
+    color: #566573;
+    font-size: 1em;
+}
+
+/* 内容区域 - 整体居中靠左阅读 */
+.content {
+    width: 100%;
+}
+.content section {
+    margin-bottom: 40px;
+}
+.content h2 {
+    color: #8b0000;
+    border-bottom: 2px solid #f1c40f;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: left; /* 章节标题左对齐 */
+}
+.content h3 {
+    color: #34495e;
+    margin: 20px 0 12px 0;
+    font-size: 1.2em;
+    text-align: left;
+}
+.content p, .content ul {
+    text-align: left; /* 正文和列表保持左对齐，便于阅读 */
+    margin-bottom: 18px;
+}
+.content ul {
+    padding-left: 25px;
+}
+.content li {
+    margin-bottom: 8px;
+}
+
+/* 特殊内容块样式 */
+.stage, .logic-block {
+    background: #f8f9fa;
+    padding: 20px;
+    border-left: 4px solid #3498db;
+    margin-bottom: 20px;
+    border-radius: 0 6px 6px 0;
+}
+.stage-danger, .logic-warning {
+    border-left-color: #e74c3c;
+    background-color: #fff5f5;
+}
+
+/* 页脚 */
+.site-footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #95a5a6;
+    font-size: 0.9em;
+    border-top: 1px solid #ecf0f1;
+    padding-top: 20px;
+}

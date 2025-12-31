@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>异物表档案库</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 首页专属样式 */
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            margin: -30px -30px 40px -30px;
+            border-radius: 8px 8px 0 0;
+        }
+        .hero h1 {
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #8b0000;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card h3 {
+            color: #222;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .card-link {
+            display: inline-block;
+            color: #8b0000;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .card-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>B-11HC世界观异物表</h1>
+            <p>一个收录、整理与研究异常实体及规则怪谈的协作式档案库</p>
+        </div>
+
+        <h2>📁 档案目录</h2>
+        <p>点击以下卡片查看详细档案内容。</p>
+
+        <div class="card-container">
+           <!-- 卡片1: 0112-重启人生 -->
+<article class="card">
+    <div class="card-content">
+        <h3>0112 - 重启人生</h3>
+        <div class="meta-info">
+            <span><strong>等级:</strong> 待定</span><br>
+            <span><strong>形态:</strong> 液态拟态</span>
+        </div>
+        <p>一种能读取记忆、并重构为记忆中已故人物的液态银异常实体。对视触发，转化过程具有剧毒，且可被强行中断。</p>
+        <a href="pages/GA0112.html" class="card-link">查看完整档案 →</a>
+    </div>
+</article>
+
+<!-- 卡片2: 1939-猫妈妈 -->
+<article class="card">
+    <div class="card-content">
+        <h3>1939 - 猫妈妈</h3>
+        <div class="meta-info">
+            <span><strong>等级:</strong> Euclid</span><br>
+            <span><strong>性别:</strong> 女</span>
+        </div>
+        <p>一个对“阳光孤儿院”有特殊反应、会强制他人遵守严格作息的类人猫形异常实体。唯一已知个体，具有高度危险性和复杂的规则逻辑。</p>
+        <a href="pages/GA1939.html" class="card-link">查看完整档案 →</a>
+    </div>
+</article>
+
+<!-- 卡片3: 2425-宠溺神明 -->
+<article class="card">
+    <div class="card-content">
+        <h3>2425 - 宠溺神明</h3>
+        <div class="meta-info">
+            <span><strong>等级:</strong> Keter</span><br>
+            <span><strong>形态:</strong> 多眼羽唇复合体</span>
+        </div>
+        <p>一个自称“土地神”的复合体异常，能读取意识并引诱痛苦者接受“新人生”，将其转化为危险的“液态欲望”。需极端物理隔离。</p>
+        <a href="pages/GA2425.html" class="card-link">查看完整档案 →</a>
+    </div>
+</article>
+            <!-- 档案卡片2：预留空位（供你未来添加） -->
+            <article class="card">
+                <div class="card-content">
+                    <h3>[编号] - [标题]</h3>
+                    <p>此处是档案的简短摘要描述。当你创建了新的 .html 档案页面后，在此处修改链接和描述即可。</p>
+                    <a href="#" class="card-link">档案筹备中</a>
+                </div>
+            </article>
+
+            <!-- 你可以复制上面的 .card 结构，来添加更多档案 -->
+        </div>
+
+        <footer style="margin-top: 40px; text-align: center; color: #888; font-size: 0.9em;">
+            <p>本档案库遵循基金会保密协议。未经授权访问将被记录。</p>
+        </footer>
+    </div>
+</body>
+</html>
