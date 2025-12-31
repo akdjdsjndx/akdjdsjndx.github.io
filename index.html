@@ -22,6 +22,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
+            margin-bottom: 40px;
         }
         .card {
             background: white;
@@ -61,6 +62,99 @@
         .card-link:hover {
             text-decoration: underline;
         }
+        
+        /* 背景故事区域样式 */
+        .background-section {
+            margin: 50px 0;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+            border-radius: 8px;
+            text-align: center;
+            color: #f0f0f0;
+            border: 2px solid #415a77;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .background-section h2 {
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            font-size: 1.8em;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .background-section p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+        
+        .story-button {
+            display: inline-block;
+            background: linear-gradient(to right, #8b0000, #c1121f);
+            color: white;
+            padding: 16px 40px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid #9d0208;
+            box-shadow: 0 6px 0 rgba(139, 0, 0, 0.4), 0 10px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .story-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 0 rgba(139, 0, 0, 0.4), 0 15px 25px rgba(0, 0, 0, 0.25);
+            background: linear-gradient(to right, #9d0208, #d90429);
+        }
+        
+        .story-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 4px 0 rgba(139, 0, 0, 0.4), 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .story-button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .story-button:hover::after {
+            left: 100%;
+        }
+        
+        /* 新增档案卡片样式 */
+        .background-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #415a77;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .background-card h4 {
+            color: #e0e0e0;
+            margin-top: 0;
+            border-bottom: 1px solid #778da9;
+            padding-bottom: 10px;
+        }
+        
+        .background-card p {
+            color: #cccccc;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
@@ -95,7 +189,7 @@
             <span><strong>等级:</strong> Euclid</span><br>
             <span><strong>性别:</strong> 女</span>
         </div>
-        <p>一个对“阳光孤儿院”有特殊反应、会强制他人遵守严格作息的类人猫形异常实体。唯一已知个体，具有高度危险性和复杂的规则逻辑。</p>
+        <p>一个对"阳光孤儿院"有特殊反应、会强制他人遵守严格作息的类人猫形异常实体。唯一已知个体，具有高度危险性和复杂的规则逻辑。</p>
         <a href="pages/GA1939.html" class="card-link">查看完整档案 →</a>
     </div>
 </article>
@@ -108,7 +202,7 @@
             <span><strong>等级:</strong> Keter</span><br>
             <span><strong>形态:</strong> 多眼羽唇复合体</span>
         </div>
-        <p>一个自称“土地神”的复合体异常，能读取意识并引诱痛苦者接受“新人生”，将其转化为危险的“液态欲望”。需极端物理隔离。</p>
+        <p>一个自称"土地神"的复合体异常，能读取意识并引诱痛苦者接受"新人生"，将其转化为危险的"液态欲望"。需极端物理隔离。</p>
         <a href="pages/GA2425.html" class="card-link">查看完整档案 →</a>
     </div>
 </article>
@@ -122,6 +216,22 @@
             </article>
 
             <!-- 你可以复制上面的 .card 结构，来添加更多档案 -->
+        </div>
+
+        <!-- 新增：背景故事区域 -->
+        <div class="background-section">
+            <h2>🔮 B-11HC 世界观背景</h2>
+            <p>探索原初音频的起源、诡异时代爆发的时间线，以及人类如何在四座海上安全屋中挣扎求存。</p>
+            
+            <div class="background-card">
+                <h4>核心设定概览</h4>
+                <p><strong>原初音频：</strong> 2031年发现的神秘黑色方块，其内部音频改变了人类文明的轨迹。</p>
+                <p><strong>诡异时代：</strong> 2034年由一句普通抱怨引发的全球性异常爆发事件，彻底改变了世界格局。</p>
+                <p><strong>安全屋：</strong> 人类在四大洋中心建立的最后四座移动堡垒，承载着文明最后的火种。</p>
+                <p><strong>时间线：</strong> 从2031年"最后的美好"到2089年"电视荧幕"，见证人类文明的挣扎与抉择。</p>
+            </div>
+            
+            <a href="pages/background.html" class="story-button">希望了解背景故事？</a>
         </div>
 
         <footer style="margin-top: 40px; text-align: center; color: #888; font-size: 0.9em;">
