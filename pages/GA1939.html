@@ -286,6 +286,146 @@
                 font-size: 0.9em;
             }
         }
+        
+        /* 新增：附录实验报告样式 */
+        .appendix-section {
+            margin: 40px auto;
+            max-width: 900px;
+            text-align: center;
+        }
+        
+        .appendix-toggle {
+            background: rgba(139, 0, 0, 0.2);
+            color: #ff6b6b;
+            border: 2px solid rgba(139, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .appendix-toggle:hover {
+            background: rgba(139, 0, 0, 0.3);
+            border-color: #ff6b6b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.2);
+        }
+        
+        .appendix-toggle::after {
+            content: "▼";
+            margin-left: 10px;
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+        
+        .appendix-toggle.expanded::after {
+            transform: rotate(180deg);
+        }
+        
+        .experiment-report {
+            background: rgba(30, 30, 40, 0.9);
+            border: 1px solid #2a2a3a;
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 20px;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #c0c0c0;
+            display: none;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+            border-left: 4px solid #555;
+            position: relative;
+        }
+        
+        .experiment-report::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #555, transparent);
+        }
+        
+        .experiment-report h3 {
+            color: #8ab4f8;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+            font-size: 1.3em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .experiment-meta {
+            background: rgba(40, 40, 55, 0.7);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 25px;
+            border-left: 3px solid #8b0000;
+        }
+        
+        .experiment-meta p {
+            margin: 5px 0;
+        }
+        
+        .experiment-section {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #444;
+        }
+        
+        .experiment-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .experiment-section h4 {
+            color: #ffcc80;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .experiment-note {
+            background: rgba(139, 0, 0, 0.1);
+            border-left: 3px solid rgba(139, 0, 0, 0.7);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+            font-style: italic;
+        }
+        
+        .experiment-conclusion {
+            background: rgba(40, 40, 60, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 25px;
+            border: 1px solid #444;
+        }
+        
+        .experiment-signature {
+            text-align: right;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed #555;
+            font-weight: bold;
+            color: #8ab4f8;
+        }
+        
+        .timestamp {
+            color: #aaa;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -301,7 +441,7 @@
                 <p class="card-subtitle">唯一已知个体 · 类人猫形异常实体 · 规则型威胁</p>
                 
                 <div class="card-meta">
-                    <span class="meta-item">项目等级: Euclid</span>
+                    <span class="meta-item">项目等级: 深刻</span>
                     <span class="meta-item">性别: 女</span>
                     <span class="meta-item">种族: 异常生物</span>
                     <span class="meta-item">身高: 2.2m</span>
@@ -471,6 +611,58 @@
                     <p>• 镜子实验：会导致立即进入阶段3，严禁进行</p>
                 </div>
                 
+                <!-- 新增：附录实验报告 -->
+                <div class="appendix-section">
+                    <div class="appendix-toggle" id="appendixToggle">
+                        附录实验报告-1
+                    </div>
+                    
+                    <div class="experiment-report" id="experimentReport">
+                        <h3>长期滞留影响测试</h3>
+                        
+                        <div class="experiment-meta">
+                            <p><strong>实验日期：</strong>2099年7月10日 正午13:35</p>
+                            <p><strong>申请人：</strong>DR、penreeo</p>
+                            <p><strong>测试人员：</strong>kanlefull</p>
+                            <p><strong>测试目标：</strong>永久滞留是否会有隐性后遗症。</p>
+                        </div>
+                        
+                        <div class="experiment-section">
+                            <h4>测试流程</h4>
+                            <p>死刑犯kanlefull，将会从2099年7月10日一直居住在1号阳光孤儿院中，我们为其配备了一枚魂匣，以确保测试人员至少能够跟随1939十年。</p>
+                            <p>并且按照十倍标准时长，每隔50天进行一次精神指标测试，人类常识矫正。每隔一年进行一次自我回归缓冲以检测测试人员是否正常。</p>
+                        </div>
+                        
+                        <div class="experiment-section">
+                            <h4>实验过程</h4>
+                            <p><strong>初期：</strong>测试人员最初很恐惧，即使在我们为他提供了所有的正确道路之后，他依旧表示了恐惧。</p>
+                            <p><strong>50日：</strong>第一次精神指标测试显示kanlefull除了轻度抑郁，以及混合5%的deb指数以外。他在满分600的人类常识矫正试题中得到了534分。</p>
+                            <p><strong>200日：</strong>第四次精神指标测试，kanlefull似乎克服了恐惧，他表示已经习惯了兔妈妈的存在，并表示自己的生活很有规律，充满充实感。</p>
+                            <p><strong>366日：</strong>第一次自我回归缓冲，我们将kanlefull替换出孤儿院，并对他进行全身检查，感染值只有2点，这很不正常，在如今的世界里，正常人都应该在10左右，难道1939还有现实稳定功能？这一周相当于给kanlefull一个小假期，但是他似乎有点不开心。</p>
+                            <p><strong>500日：</strong>第十次精神指标测试显示kanlefull非常好，测试满分，deb指数接近0%，人类常识矫正得到了400的高分！</p>
+                            <p><strong>1098日：</strong>第三年，kanlefull的自我回归缓冲已经非常轻车熟路了，anoli司长很满意我们的测试进度。我看着kanlefull的猫尾巴，询问了他的抓握能力是否正常。一切都好极了。</p>
+                            <p class="experiment-note">anoli司长似乎想要了解一下我们的进度，太好了，我迫不及待的想要给他分享妈妈的甜饼蛋糕了。</p>
+                        </div>
+                        
+                        <div class="experiment-section">
+                            <h4>实验结果</h4>
+                            <p>任何人员，在精神低于70点时，都会被1939潜移默化转移注意力和思想。他们会将1939由衷的当成一个关爱自己的母亲，这点在童年糟糕的人员中似乎会更加严重。</p>
+                        </div>
+                        
+                        <div class="experiment-conclusion">
+                            <h4>结论</h4>
+                            <p>1. 为1939的介绍文本增加附属说明，任何测试人员的院内逗留时长不应该超过1个标准周期。标准周期延长需要说明原因，以及使用B级记忆清洗剂。</p>
+                            <p>2. 间接接触的测试人员或实验人员，工作时长不应该超过3个标准周期，我们允许他们进行两班分期工作。</p>
+                            <p>3. 观察员必须携带存档机，任何改变发生时立刻回档，人员应在1年内更换至少3次。</p>
+                        </div>
+                        
+                        <div class="experiment-signature">
+                            <div class="timestamp">报告归档时间：2099-11-30 23:59</div>
+                            <div>签名：anoli</div>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- 页脚 -->
                 <div class="footer-note">
                     <p>档案最后更新：████-██-██ | 保密等级：4级 | 访问记录已保存</p>
@@ -479,6 +671,27 @@
             </div>
         </div>
     </div>
-<script src="../script.js"></script>
+    
+    <script>
+        // 附录实验报告展开/收起功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const appendixToggle = document.getElementById('appendixToggle');
+            const experimentReport = document.getElementById('experimentReport');
+            
+            if (appendixToggle && experimentReport) {
+                appendixToggle.addEventListener('click', function() {
+                    if (experimentReport.style.display === 'block') {
+                        experimentReport.style.display = 'none';
+                        appendixToggle.classList.remove('expanded');
+                    } else {
+                        experimentReport.style.display = 'block';
+                        appendixToggle.classList.add('expanded');
+                    }
+                });
+            }
+        });
+    </script>
+    
+    <script src="../script.js"></script>
 </body>
 </html>
