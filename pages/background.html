@@ -63,14 +63,7 @@
             margin-bottom: 25px;
             border-left: 4px solid #9d0208;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
             border: 1px solid rgba(65, 90, 119, 0.4);
-        }
-        
-        .timeline-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.1);
         }
         
         .timeline-header {
@@ -112,6 +105,18 @@
             color: #dddddd;
         }
         
+        /* 黑方块样式 */
+        .black-box {
+            display: inline-block;
+            background-color: #000;
+            color: #000;
+            padding: 0 5px;
+            margin: 0 2px;
+            border-radius: 3px;
+            user-select: none;
+            cursor: default;
+        }
+        
         .category-section {
             margin: 40px 0;
             padding: 25px;
@@ -139,12 +144,6 @@
             padding: 20px;
             border-radius: 6px;
             border: 1px solid rgba(65, 90, 119, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .category-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-3px);
         }
         
         .category-card h4 {
@@ -283,6 +282,96 @@
             color: #ff8e8e;
         }
         
+        /* 地区设定样式 */
+        .region-section {
+            margin: 40px 0;
+        }
+        
+        .region-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(65, 90, 119, 0.4);
+        }
+        
+        .region-card h3 {
+            color: #e0e0e0;
+            margin-top: 0;
+            border-bottom: 1px solid rgba(119, 141, 169, 0.5);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .info-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid rgba(65, 90, 119, 0.3);
+        }
+        
+        .info-item h4 {
+            color: #ff6b6b;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        /* 地堡系统样式 */
+        .bunker-section {
+            margin: 40px 0;
+        }
+        
+        .bunker-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(65, 90, 119, 0.4);
+        }
+        
+        .bunker-card h3 {
+            color: #e0e0e0;
+            margin-top: 0;
+            border-bottom: 1px solid rgba(119, 141, 169, 0.5);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .bunker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .bunker-level {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid rgba(65, 90, 119, 0.3);
+        }
+        
+        .bunker-level h4 {
+            color: #e0e0e0;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .bunker-level .level-name {
+            color: #ff6b6b;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
         /* 确保所有文本都是浅色 */
         p, li, td, th, span {
             color: #dddddd;
@@ -314,6 +403,10 @@
             .oc-members {
                 grid-template-columns: 1fr;
             }
+            
+            .info-grid, .bunker-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -332,11 +425,16 @@
         
         <h2>世界观概述</h2>
         <div class="timeline-item">
+            <div class="timeline-header">
+                <h3 class="timeline-title">世界观概述</h3>
+            </div>
             <div class="timeline-content">
                 <p><strong>突然出现的原初音频给人类带来了另外一种全新的道路</strong>，科学家们兴奋的，夜以继日的研究祂，直到一句随口的话语之后，世界开始了第一次诡异爆发。</p>
                 <p>全世界陷入了各种困境之中，人类曾经骄傲的热武器对这些各种各样的诡异而言只是一阵清风。</p>
                 <p>全世界联合在一起，在海洋上建立了最后的四座城市。</p>
                 <p>陆地变成了一座巨大的牢笼，连活着都是问题时，摇篮计划已经变成了一个无法实现的梦。</p>
+            </div>
+        </div>
         
         <h2>时间线事件</h2>
         <div class="timeline-container">
@@ -384,18 +482,105 @@
             
             <div class="timeline-item">
                 <div class="timeline-header">
+                    <h3 class="timeline-title">异常应急处理法案</h3>
+                    <span class="timeline-date">2034.1.1 - 2034.1.1</span>
+                </div>
+                <div class="timeline-content">
+                    <p>根据发现时间来确定是不现实的，国际太大了，这一万多个异常分散在世界各地，要按时间进行分类不现实，海底光缆已经没有几根了，卫星的数据传输不够，科技前行一无所获。</p>
+                    <p>实行地区制吧。</p>
+                    <p>地区制？</p>
+                    <p>每个地方都有不一样的说法，按照当地的说法进行记录，然后发一份总纲到联合国进行汇总。</p>
+                    <p>先这样吧。</p>
+                    <p>先这样吧，时间不够了。</p>
+                    <p>记录器还有机会吗？</p>
+                    <p>2次。</p>
+                    <p>明白了。</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">莱克尼斯访谈</h3>
+                    <span class="timeline-date">2035.1.1 - 2035.1.1</span>
+                </div>
+                <div class="timeline-content">
+                    <p><strong>记者：</strong>先生，你认为我们之后该如何解决这些问题呢？</p>
+                    <p><strong>莱克尼斯：</strong>解决不了。</p>
+                    <p><strong>记者：</strong>不是，我是说，我们总能做些什么吧？或者是...</p>
+                    <p><strong>莱克尼斯：</strong>什么都做不了。</p>
+                    <p><strong>记者：</strong>那其他人呢，总得活下去吧。</p>
+                    <p><strong>莱克尼斯：</strong>好啊，那你现在走进加利福尼亚州的209号别墅，帮我们探查情况。</p>
+                    <p><strong>记者：</strong>先生，您...</p>
+                    <p><strong>莱克尼斯：</strong>你看，人都是虚伪的，你想着活下去，他也想着活下去，那谁去寻找规则呢？</p>
+                    <p><strong>记者：</strong>...</p>
+                    <p><strong>莱克尼斯：</strong>我该走了，你们耽误了时间。</p>
+                    <p><strong>记者：</strong>等一下，您不继续参与1号研究了吗？那我们怎么办？</p>
+                    <p><strong>莱克尼斯：</strong>你们去死，你们让我看不到一点希望，我要去还有希望的地方。</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">记录提案</h3>
+                    <span class="timeline-date">2035.1.1 - 2035.1.1</span>
+                </div>
+                <div class="timeline-content">
+                    <p>异常很多，仅仅一年，无数大大小小的事件就发生在这片土地上。</p>
+                    <p>人类无奈的接受这一切。</p>
+                    <p>但是我们身后是一片城邦，我们身旁是无数共同前行的同志。</p>
+                    <p>此刻，人类真正联手，走在一起。</p>
+                    <p><strong>异常：排序法案</strong></p>
+                    <p><strong>更名为：007-约法三章</strong></p>
+                    <p>人类必须携手并进。</p>
+                    <p>人类必须保留火种。</p>
+                    <p>人类必将荣光永存。</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
                     <h3 class="timeline-title">大崩坏</h3>
                     <span class="timeline-date">2042.1.1 - 2042.1.1</span>
                 </div>
                 <div class="timeline-content">
-                    <p>兹....兹兹......请注意，请注意。这里是炎国龙门人民政府最后的消息。请所有的炎国人民注意。</p>
-                    <p>炎国人民共和国中央广播电视台。炎国人民共和国中央广播电视台。炎国人民共和国中央广播电视台。</p>
-                    <p>现在向各省，自治区，直辖市，特别行政区，新疆生产建设兵团以台湾改造建设兵团播报紧急避险通知。</p>
+                    <p>兹....兹兹......请注意，请注意。这里是<span class="black-box">████</span><span class="black-box">████</span>最后的消息。请所有的<span class="black-box">██</span>人民注意。</p>
+                    <p><span class="black-box">███████████████</span>。<span class="black-box">███████████████</span>。<span class="black-box">███████████████</span>。</p>
+                    <p>现在向<span class="black-box">██</span>，<span class="black-box">████</span>，<span class="black-box">████</span>，<span class="black-box">████████</span>，<span class="black-box">████████████████</span>以<span class="black-box">████████████</span>播报紧急避险通知。</p>
                     <p>国家已经遭受重大灾难，基础设施遭受重大打击，部分国家机构已经失去能力。现在进行国家最高动员，重复，现在进行国家最高动员。号召所有人民群众，开展自救互救运动，请广大人民群众立即寻找离自己最近的基层组织，党组织。人民武装部以及民兵组织寻求帮助。尽一切可能帮助其他群众。</p>
                     <p>离开时请注意查看道路，输电设备，铁路设施，通信基站，光缆，房屋，农田等基础资源和设施的损毁情况，及时上报到附近基层组织。</p>
                     <p>广大人民群众要积极组织灾后重建活动，灾变情况下，我们必须团结一切能够团结的力量，组成灾后重建统一战线。如无法及时的组织起重建活动，群众应尽量呆在原地，维持个人存活，等待，消防，解放军，武警或紧急救援队。</p>
                     <p>各下级党组织，应积极发挥战斗堡垒的作用，党员应主动迎难而上，发挥先锋模范作用，不忘初心，牢记使命。竭尽全力维护群众利益，组织群众进行生产自救，不怕牺牲是党员的义务与责任，更是我们对人民的庄严承诺。</p>
-                    <p>广大人民群众还要严防犯罪行为，坚决反对利用国难盗取破坏国家公共财产和其他公民个人财产的行为。法律在任何时间！任何情况下都具有效力！以上信息请广大人民群众相互转告。最后！人民万岁！中共中央，国务院，中央军委联合宣布。</p>
+                    <p>广大人民群众还要严防犯罪行为，坚决反对利用国难盗取破坏国家公共财产和其他公民个人财产的行为。法律在任何时间！任何情况下都具有效力！以上信息请广大人民群众相互转告。最后！人民万岁！<span class="black-box">████</span>，<span class="black-box">████</span>，<span class="black-box">██████</span>联合宣布。</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">11690-死锁石碑</h3>
+                    <span class="timeline-date">2059.1.1 - 2059.1.1</span>
+                </div>
+                <div class="timeline-content">
+                    <p>电子产品会出错。</p>
+                    <p>纸张会腐朽。</p>
+                    <p>文字会变化。</p>
+                    <p>语言会不明。</p>
+                    <p>如何传递一个会让世界毁灭的消息告诉前人。</p>
+                    <p>一块刻画了一切的，高强度复合型材料块。</p>
+                    <p>一块文明的墓碑。</p>
+                    <p>一个大大的×画在一只手按下了一个笔记本的空格的图上。</p>
+                    <p>右下角的署名是：</p>
+                    <p>李-梅格里-九川湖上。</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">安全屋建立</h3>
+                    <span class="timeline-date">2066.1.1 - 2066.1.1</span>
+                </div>
+                <div class="timeline-content">
+                    <p>三十年，人类花光了无数积蓄，无数人命，做到的也只是越发退后的属地。</p>
+                    <p>最终，通过118号异常物，人类分别在四大洋中间建立了四座，可以居住一亿人类的移动堡垒，"安全屋。"</p>
                 </div>
             </div>
             
@@ -431,7 +616,7 @@
                     <p>新希望号船员疯了。火星信号塔失去联络。我已经联系不到任何一个人，所以我将使用记录器。将本宇宙时间线推动，返回到三十年前的记录点，并将数据库送过去。</p>
                 </div>
             </div>
-         </div>
+        </div>
         
         <h2>OC成员</h2>
         <div class="oc-members">
@@ -452,6 +637,136 @@
                 <div class="oc-id">2425-宠溺神明</div>
                 <h4>宠溺神明</h4>
             </a>
+            
+            <!-- 0588-撕心裂肺卡片 -->
+            <a href="GA0588.html" class="oc-card-link">
+                <div class="oc-id">0588-撕心裂肺</div>
+                <h4>撕心裂肺</h4>
+            </a>
+        </div>
+        
+        <h2>地区设定</h2>
+        <div class="region-section">
+            <div class="region-card">
+                <h3>陆地</h3>
+                <p>面积巨大，安全区众多。原中美法俄非印。</p>
+            </div>
+            
+            <div class="region-card">
+                <h3>海岛</h3>
+                <p>地区狭隘，安全区稀少。如日韩西沙群岛等。</p>
+            </div>
+            
+            <div class="region-card">
+                <h3>安全区</h3>
+                <p><strong>异常物118-幻想乡</strong>：创建一块产出各种资源的透明地基。<br>花费：4456001648颗心脏。</p>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>太平洋安全区：地堡</h4>
+                        <p>主要人类聚居地，拥有最完善的防御和研究设施。</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h4>大西洋安全区：飞屋</h4>
+                        <p>空中移动堡垒，机动性最强。</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h4>印度洋安全区：婆罗门</h4>
+                        <p>结合古代智慧与现代科技的特殊安全区。</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h4>北冰洋安全区：冰岛</h4>
+                        <p>（2137年7月11日失联）</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="region-card">
+                <h3>陆地安全区：城邦发展系统</h3>
+                <p><strong>1008号异常：城邦发展系统。</strong></p>
+                <p>该异常直接诞生在一处人满为患的漫展中，似乎吸收了过量的游戏性思维。</p>
+                <p>漫展的一号展厅中出现了周围25公里以内的所有实时地形以及建筑物。可以目视到一道黑色的影子不停在沙盘上方游走，通过节肢调整沙盘。</p>
+                <p>系统似乎发现了核心沙盘以及会被npc注视的本身，1008号已经将一号展厅完全封锁，并凭空捏造了34个完全没有身份证和世界痕迹的"村民"，我们根据他们的自述调查，没有任何痕迹。</p>
+                <p>系统似乎会完全缔造了一个正在游玩沙盘模拟类型的玩家，会一直处在一号展厅中进行建设。住在这里的人类非常幸福，幸福到令人心动。</p>
+                <p>清洗开始了。</p>
+                <p><strong>违规操作限制：1</strong></p>
+                <p><strong>安全时间：3年阳，3年阴</strong></p>
+                <p>定期安排死刑犯进入，开始他们最后一次肆无忌惮的生活，用以压制1008号的扩展欲望。</p>
+                <p>使用郁金香每隔六年通过0588号摧毁至少50%的城镇，以减少阴年的进攻能力和延长阳年的发展时间。</p>
+            </div>
+        </div>
+        
+        <h2>地堡系统</h2>
+        <div class="bunker-section">
+            <div class="bunker-card">
+                <h3>等级区分</h3>
+                <p>严格按照战时状态进行准备。</p>
+                <p>以科学家和作战队为第一目标。</p>
+                <p>最大可能吸引群众路线，走上庄严肃穆的返航之路，天上已经没有机会，脚踏实地是最后目的。</p>
+            </div>
+            
+            <div class="bunker-card">
+                <h3>研究会等级体系</h3>
+                <div class="bunker-grid">
+                    <div class="bunker-level">
+                        <span class="level-name">小学</span>
+                        <p>完成任意一条基础路线的学习，记忆基础知识未扭曲的情况。</p>
+                    </div>
+                    
+                    <div class="bunker-level">
+                        <span class="level-name">初中</span>
+                        <p>完成基础路线学习的情况下拿到最少12分的该基础路线的附属课程。</p>
+                    </div>
+                    
+                    <div class="bunker-level">
+                        <span class="level-name">高中</span>
+                        <p>完成一次异常物的研究。</p>
+                    </div>
+                    
+                    <div class="bunker-level">
+                        <span class="level-name">大学</span>
+                        <p>解析一个异常物，或对已解析的异常物作出新方案。</p>
+                    </div>
+                    
+                    <div class="bunker-level">
+                        <span class="level-name">博士</span>
+                        <p>获得授权。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bunker-card">
+                <h3>作战队等级体系</h3>
+                <div class="bunker-grid">
+                    <div class="bunker-level">
+                        <span class="level-name">日出</span>
+                        <p>完成基础作战训练，拥有1年的陆地巡逻记录，背下常见复数异常物名单以及应急解决方案和清除预案法。</p>
+                    </div>
+                    
+                    <div class="bunker-level">
+                        <span class="level-name">日午</span>
+                        <p>3年的陆地巡逻记录，通过916的训练关卡，参与过唯一性收容。</p>
+                    </div>
+                    
+                    <div class="bunker-level">
+                        <span class="level-name">日落</span>
+                        <p>独自或带队解决过至少6次诡异爆发事件。</p>
+                    </div>
+                    
+                    <div class="bunker-level">
+                        <span class="level-name">黄昏</span>
+                        <p>6年存活记录，并拥有一个异常物使用授权。</p>
+                    </div>
+                    
+                    <div class="bunker-level">
+                        <span class="level-name">午夜</span>
+                        <p>获得授权</p>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <h2>异常分类</h2>
@@ -522,7 +837,7 @@
         </div>
         
         <footer style="margin-top: 40px; text-align: center; color: #888; font-size: 0.9em;">
-            <p>本档案库遵循基金会保密协议。未经授权访问将被记录。</p>
+            <p>本档案库遵循哈吉米保密协议。未经授权访问那我也没招，你访问吧。</p>
         </footer>
     </div>
 </body>
