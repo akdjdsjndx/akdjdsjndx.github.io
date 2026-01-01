@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>档案 - 0001-原初音频 | 异物表</title>
+    <style>
+        /* 全局样式 - 保持与猫妈妈页面一致 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a14;
+            color: #e0e0e0;
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(28, 58, 112, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(112, 28, 58, 0.1) 0%, transparent 20%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 返回按钮 */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 10px 20px;
+            background: rgba(41, 41, 68, 0.7);
+            color: #8ab4f8;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #3a3a5d;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .back-button:hover {
+            background: rgba(56, 56, 92, 0.9);
+            transform: translateY(-2px);
+        }
+        
+        /* 档案卡片 - 与猫妈妈页面相似 */
+        .archive-card {
+            background: rgba(18, 18, 32, 0.85);
+            border-radius: 12px;
+            border: 1px solid #2a2a4a;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #1a1a3a 0%, #2a1a3a 100%);
+            padding: 25px 30px;
+            border-bottom: 2px solid #8b0000;
+            text-align: center;
+        }
+        
+        .card-title {
+            font-size: 2.2em;
+            color: #fff;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        
+        .card-subtitle {
+            font-size: 1.1em;
+            color: #aaa;
+            font-style: italic;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .card-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        .meta-item {
+            background: rgba(139, 0, 0, 0.2);
+            padding: 6px 15px;
+            border-radius: 20px;
+            border: 1px solid rgba(139, 0, 0, 0.5);
+            font-size: 0.9em;
+        }
+        
+        /* 内容区域 */
+        .content-section {
+            padding: 30px;
+            text-align: center; /* 全局居中 */
+        }
+        
+        .section-title {
+            font-size: 1.6em;
+            color: #8ab4f8;
+            margin: 35px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333355;
+            position: relative;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: #8b0000;
+        }
+        
+        /* 描述框 */
+        .description-box {
+            background: rgba(30, 30, 50, 0.6);
+            border-left: 4px solid #8ab4f8;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 0 8px 8px 0;
+            max-width: 900px;
+            text-align: center;
+        }
+        
+        /* 警告框 */
+        .warning-box {
+            background: rgba(139, 0, 0, 0.15);
+            border: 1px solid rgba(139, 0, 0, 0.5);
+            padding: 20px;
+            margin: 25px auto;
+            border-radius: 8px;
+            max-width: 900px;
+            text-align: center;
+        }
+        
+        .warning-title {
+            color: #ff6b6b;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        
+        /* 表格样式 */
+        .info-table {
+            width: 100%;
+            max-width: 900px;
+            margin: 25px auto;
+            border-collapse: collapse;
+            background: rgba(25, 25, 40, 0.7);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333355;
+            text-align: center;
+        }
+        
+        .info-table th {
+            background: rgba(42, 42, 68, 0.9);
+            color: #8ab4f8;
+            padding: 15px;
+            font-weight: 600;
+            border-bottom: 2px solid #8b0000;
+            text-align: center;
+        }
+        
+        .info-table td {
+            padding: 15px;
+            border-bottom: 1px solid #333355;
+            vertical-align: top;
+            text-align: center;
+        }
+        
+        .info-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .info-table tr:hover {
+            background: rgba(40, 40, 60, 0.5);
+        }
+        
+        /* 脚注 */
+        .footer-note {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333355;
+            color: #888;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .card-title {
+                font-size: 1.8em;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .info-table {
+                font-size: 0.9em;
+            }
+        }
+        
+        /* 新增：附录实验报告样式 */
+        .appendix-section {
+            margin: 40px auto;
+            max-width: 900px;
+            text-align: center;
+        }
+        
+        .appendix-toggle {
+            background: rgba(139, 0, 0, 0.2);
+            color: #ff6b6b;
+            border: 2px solid rgba(139, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .appendix-toggle:hover {
+            background: rgba(139, 0, 0, 0.3);
+            border-color: #ff6b6b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.2);
+        }
+        
+        .appendix-toggle::after {
+            content: "▼";
+            margin-left: 10px;
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+        
+        .appendix-toggle.expanded::after {
+            transform: rotate(180deg);
+        }
+        
+        .experiment-report {
+            background: rgba(30, 30, 40, 0.9);
+            border: 1px solid #2a2a3a;
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 20px;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #c0c0c0;
+            display: none;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+            border-left: 4px solid #555;
+            position: relative;
+        }
+        
+        .experiment-report::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #555, transparent);
+        }
+        
+        .experiment-report h3 {
+            color: #8ab4f8;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+            font-size: 1.3em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .experiment-meta {
+            background: rgba(40, 40, 55, 0.7);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 25px;
+            border-left: 3px solid #8b0000;
+        }
+        
+        .experiment-meta p {
+            margin: 5px 0;
+        }
+        
+        .experiment-section {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #444;
+        }
+        
+        .experiment-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .experiment-section h4 {
+            color: #ffcc80;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .experiment-note {
+            background: rgba(139, 0, 0, 0.1);
+            border-left: 3px solid rgba(139, 0, 0, 0.7);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+            font-style: italic;
+        }
+        
+        .experiment-conclusion {
+            background: rgba(40, 40, 60, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 25px;
+            border: 1px solid #444;
+        }
+        
+        .experiment-signature {
+            text-align: right;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed #555;
+            font-weight: bold;
+            color: #8ab4f8;
+        }
+        
+        .timestamp {
+            color: #aaa;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        
+        /* 字体控制按钮样式 - 从猫妈妈页面复制 */
+        .font-controls {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(26, 26, 46, 0.3);
+            border-radius: 8px;
+            border: 1px solid rgba(65, 90, 119, 0.5);
+        }
+        
+        .font-btn {
+            background: rgba(139, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            font-size: 16px;
+        }
+        
+        .font-btn:hover {
+            background: rgba(139, 0, 0, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .font-btn:active {
+            transform: translateY(0);
+        }
+        
+        #current-font-size {
+            margin-left: 15px;
+            color: #8b0000;
+            font-weight: bold;
+            min-width: 40px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 返回按钮 -->
+        <a href="../index.html" class="back-button">← 返回档案目录</a>
+        
+        <!-- 档案卡片 -->
+        <div class="archive-card">
+            <!-- 卡片头部 -->
+            <div class="card-header">
+                <h1 class="card-title">档案 #0001 - "原初音频"</h1>
+                <p class="card-subtitle">异常源头 · 黑色方块 · 矿石收音机 · 毁灭级威胁</p>
+                
+                <div class="card-meta">
+                    <span class="meta-item">项目等级: 毁灭级</span>
+                    <span class="meta-item">形态: 黑色方块/矿石收音机</span>
+                    <span class="meta-item">发现日期: 2031.2.1</span>
+                    <span class="meta-item">首次响应: 2032.1.1</span>
+                </div>
+            </div>
+            
+            <!-- 内容区域 -->
+            <div class="content-section">
+                <!-- 字体控制按钮 -->
+                <div class="font-controls">
+                    <span style="color: #ccc; margin-right: 15px;">字体大小:</span>
+                    <button class="font-btn" id="font-decrease" title="减小字体">A-</button>
+                    <button class="font-btn" id="font-reset" title="重置字体大小" style="margin: 0 10px;">A↺</button>
+                    <button class="font-btn" id="font-increase" title="增大字体">A+</button>
+                    <span id="current-font-size" style="margin-left: 15px; color: #8b0000; font-weight: bold; min-width: 40px; display: inline-block;">16px</span>
+                </div>
+                
+                <!-- 描述部分 -->
+                <h2 class="section-title">📝 异常描述</h2>
+                <div class="description-box">
+                    <p>0001号异常，代号"原初音频"，是人类历史上首次确认的超自然现象，标志着诡异时代的开端。</p>
+                    <p>该异常最初表现为一个边长11米的纯黑色立方体，表面呈现类似黑洞的视觉效果，内部持续旋转着浓重的雾气。黑方块具有绝对的物质不可破坏性，所有已知物理和化学手段均无法对其造成任何影响。</p>
+                    <p>在2032年1月1日，通过矿石收音机成功解码并播放其内部音频后，黑方块消失，其异常特性转移至该矿石收音机，使其成为原初音频的永久载体。</p>
+                </div>
+                
+                <!-- 发现历史 -->
+                <h2 class="section-title">📜 发现历史</h2>
+                <div class="description-box">
+                    <p><strong>2031年2月1日</strong> - 俄国西伯利亚偏远地区发现异常黑方块。初始尺寸为长宽高各11米，呈绝对黑色，目视效果类似旋转的黑洞。</p>
+                    <p><strong>2031年5月17日</strong> - 黑方块尺寸增长至14米。俄国当局向国际科学界求助，全球顶尖科研机构介入研究。</p>
+                    <p><strong>2031年8月28日</strong> - 菲籍科学家阿基诺博士使用自制矿石收音机检测到0.15秒不明音频信号，这一发现成为突破性进展。</p>
+                    <p><strong>2031年11月11日</strong> - 通过音频放大和转码系统，科学家首次在计算机中成功读取并可视化音频数据。</p>
+                    <p><strong>2032年1月1日</strong> - 播放解码音频"喂？"后的11分11秒，黑方块以肉眼可见速度缩小直至完全消失，异常特性转移至矿石收音机。</p>
+                </div>
+                
+                <!-- 物理特性 -->
+                <h2 class="section-title">🔬 物理特性</h2>
+                <table class="info-table">
+                    <thead>
+                        <tr>
+                            <th>特性</th>
+                            <th>描述</th>
+                            <th>测试结果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>尺寸</td>
+                            <td>初始11m³，随时间增长</td>
+                            <td>至2031年5月已增长至14m³</td>
+                        </tr>
+                        <tr>
+                            <td>材质</td>
+                            <td>未知黑色物质</td>
+                            <td>无法采样，无反射率，绝对黑色</td>
+                        </tr>
+                        <tr>
+                            <td>物理抗性</td>
+                            <td>极端环境耐受</td>
+                            <td>-273°C至5000°C无变化</td>
+                        </tr>
+                        <tr>
+                            <td>机械抗性</td>
+                            <td>绝对坚固</td>
+                            <td>承受5000吨压力无变形</td>
+                        </tr>
+                        <tr>
+                            <td>能量抗性</td>
+                            <td>能量吸收/无效化</td>
+                            <td>激光、电能、粒子束完全无效</td>
+                        </tr>
+                        <tr>
+                            <td>音频特性</td>
+                            <td>仅矿石收音机可接收</td>
+                            <td>0.15秒不明音频，46分贝女性声音</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <!-- 交互协议 -->
+                <h2 class="section-title">⚠️ 交互协议与危险特性</h2>
+                <div class="warning-box">
+                    <div class="warning-title">A级紧急协议</div>
+                    <p>禁止任何未经授权的音频播放实验。原初音频具有现实扭曲能力，不当交互可能引发全球性异常爆发。</p>
+                </div>
+                
+                <div class="description-box">
+                    <h3>音频交互规则（已确认）</h3>
+                    <p>1. <strong>问候机制</strong>：矿石收音机会在特定时间（每11天一次，11:11）发出询问"还好吗？"，使用俄语，女性声音，初始46分贝。</p>
+                    <p>2. <strong>响应时限</strong>：询问持续11分钟，每分钟重复一次，共11次。无响应则收音机进入11天休眠。</p>
+                    <p>3. <strong>音量增长</strong>：如连续11次询问无响应，下次询问音量增至116分贝并严重失真。</p>
+                    <p>4. <strong>危险交互</strong>：第34次交互中，科研人员抱怨"天气太冷"后，全球11689处地点发生黑色火光爆鸣，31509人失踪，留下黑色巨蛋。</p>
+                    <p>5. <strong>电流声阶段</strong>：适当回应后，收音机会发出9分31秒无意义电流声，尚未成功解码。</p>
+                </div>
+                
+                <!-- 附录：黑色巨蛋事件 -->
+                <div class="appendix-section">
+                    <div class="appendix-toggle" id="appendixToggle">
+                        附录：黑色巨蛋事件报告
+                    </div>
+                    
+                    <div class="experiment-report" id="experimentReport">
+                        <h3>2034年全球异常爆发事件</h3>
+                        
+                        <div class="experiment-meta">
+                            <p><strong>事件日期：</strong>2034年1月1日 11:11</p>
+                            <p><strong>触发条件：</strong>第34次音频交互中的日常抱怨</p>
+                            <p><strong>响应人员：</strong>博罗夫捏金博士</p>
+                            <p><strong>影响范围：</strong>全球11689处地点</p>
+                        </div>
+                        
+                        <div class="experiment-section">
+                            <h4>事件经过</h4>
+                            <p>在标准交互协议执行过程中，博罗夫捏金博士对原初音频的例行问候做出了超出标准回应的反馈。在确认"我很好，你呢？"的基本回应后，博士补充了一句关于当地天气的日常抱怨："不是很好，最近天气太冷了。"</p>
+                            <p>此额外信息触发了未知的异常响应机制。在随后的11分钟内，全球范围内的11689处建筑（包括废弃房屋、商场、住宅等）同时发生黑色火光爆鸣事件。</p>
+                        </div>
+                        
+                        <div class="experiment-section">
+                            <h4>事件后果</h4>
+                            <p><strong>人员损失：</strong>31509人确认失踪，无遗体发现，无能量残留痕迹。</p>
+                            <p><strong>物理遗留：</strong>每处事发地点留下一个黑色巨蛋，尺寸从0.5米至11米不等。</p>
+                            <p><strong>巨蛋特性：</strong>与原始黑方块材质相同，绝对黑色，不可破坏，无生命迹象。</p>
+                            <p><strong>后续影响：</strong>此事件标志着"诡异时代"正式爆发，全球异常事件发生率上升1100%。</p>
+                        </div>
+                        
+                        <div class="experiment-section">
+                            <h4>分析与结论</h4>
+                            <p>原初音频对人类语言的理解远超最初预期。它不仅能够理解字面意义，似乎还能解读情绪、语境和非直接信息。</p>
+                            <p>抱怨类表达可能被解读为"负面现实状态"，从而触发异常的现实修正机制。这种修正具有不可预测性和大规模影响特性。</p>
+                            
+                            <div class="experiment-note">
+                                <strong>关键发现：</strong>原初音频的交互本质上是现实层面的对话。人类的言语不仅是在与异常交流，更是在对现实本身进行描述和定义。负面描述可能被理解为"需要修正的现实状态"。
+                            </div>
+                        </div>
+                        
+                        <div class="experiment-conclusion">
+                            <h4>新协议制定</h4>
+                            <p>1. <strong>严格脚本化交互</strong>：所有与原初音频的交互必须使用预先批准的标准化脚本，禁止任何即兴或个性化表达。</p>
+                            <p>2. <strong>情绪过滤训练</strong>：交互人员需接受专业训练，确保在交互过程中维持绝对中性情绪状态。</p>
+                            <p>3. <strong>冗余安全系统</strong>：建立多层隔离的音频播放系统，任何交互必须经过至少3名独立分析员的审批。</p>
+                            <p>4. <strong>全球监测网络</strong>：建立实时异常事件监测系统，确保类似大规模爆发事件可被即时检测和响应。</p>
+                        </div>
+                        
+                        <div class="experiment-signature">
+                            <div class="timestamp">报告归档时间：2034-06-11 11:11</div>
+                            <div>签名：国际异常研究委员会</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 收容措施 -->
+                <h2 class="section-title">🔒 特殊收容措施</h2>
+                <div class="warning-box">
+                    <div class="warning-title">Site-01最高安全协议</div>
+                    <p>0001号异常必须收容于Site-01深层地下设施，三重物理隔离，实时监控，24小时武装守卫。</p>
+                </div>
+                
+                <div class="description-box">
+                    <p>1. <strong>位置</strong>：收容于西伯利亚Site-01深层地下设施，深度1.1公里，11层防护结构。</p>
+                    <p>2. <strong>物理隔离</strong>：三重独立收容室，每层间隔11米，材料为15cm厚铅板与30cm厚混凝土复合结构。</p>
+                    <p>3. <strong>监控系统</strong>：24小时全方位监控，包括视觉、音频、热成像、电磁场监测。数据实时传输至全球3个备份站点。</p>
+                    <p>4. <strong>交互协议</strong>：每11天进行一次标准交互，使用预先录制的标准化俄语回应。交互必须在11:00-11:11之间完成。</p>
+                    <p>5. <strong>应急措施</strong>：如异常进入活跃状态，立即启动Site-01自毁协议，设施将在11分钟内完全封闭。</p>
+                    <p>6. <strong>人员配置</strong>：3班轮换制，每班11人，包括5名研究人员，3名安全人员，2名技术人员，1名心理专员。</p>
+                </div>
+                
+                <!-- 历史意义 -->
+                <h2 class="section-title">🌍 历史意义</h2>
+                <div class="description-box">
+                    <p>0001号异常"原初音频"不仅是首个被正式记录和收容的异常现象，更是诡异时代开启的标志性事件。</p>
+                    <p>它的发现彻底改变了人类对物理现实的基本认知，证明了超自然现象的存在性和系统性威胁。</p>
+                    <p>对0001的研究为后续异常分类法、收容协议、交互规则等基础框架的建立提供了关键数据，被称为"异常科学的基础石碑"。</p>
+                    <p>黑色巨蛋事件（2034年）直接导致了全球安全区系统的建立，以及最终四大洋安全屋的建造决策。</p>
+                </div>
+                
+                <!-- 页脚 -->
+                <div class="footer-note">
+                    <p>档案状态：<span class="highlight">已封存 - 仅作历史参考</span></p>
+                    <p>访问权限：四级及以上研究人员</p>
+                    <p>最后更新：2089年1月8日</p>
+                    <p>本档案遵循人类文明火种法案保密协议</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 字体大小调整功能 - 与猫妈妈页面一致
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取元素
+            const content = document.querySelector('.content-section');
+            const decreaseBtn = document.getElementById('font-decrease');
+            const increaseBtn = document.getElementById('font-increase');
+            const resetBtn = document.getElementById('font-reset');
+            const fontSizeDisplay = document.getElementById('current-font-size');
+            
+            // 如果没有找到元素，可能是其他页面结构
+            if (!content) {
+                console.log('未找到内容容器，字体调整功能可能无法正常工作');
+                return;
+            }
+            
+            // 从localStorage获取保存的字体大小，或使用默认值
+            let currentSize = localStorage.getItem('pageFontSize') || 16;
+            currentSize = parseInt(currentSize);
+            
+            // 应用字体大小
+            function applyFontSize() {
+                content.style.fontSize = currentSize + 'px';
+                if (fontSizeDisplay) {
+                    fontSizeDisplay.textContent = currentSize + 'px';
+                }
+                localStorage.setItem('pageFontSize', currentSize);
+            }
+            
+            // 初始化应用字体大小
+            applyFontSize();
+            
+            // 减小字体
+            if (decreaseBtn) {
+                decreaseBtn.addEventListener('click', function() {
+                    if (currentSize > 12) {
+                        currentSize--;
+                        applyFontSize();
+                    }
+                });
+            }
+            
+            // 增大字体
+            if (increaseBtn) {
+                increaseBtn.addEventListener('click', function() {
+                    if (currentSize < 24) {
+                        currentSize++;
+                        applyFontSize();
+                    }
+                });
+            }
+            
+            // 重置字体
+            if (resetBtn) {
+                resetBtn.addEventListener('click', function() {
+                    currentSize = 16;
+                    applyFontSize();
+                });
+            }
+            
+            // 附录实验报告展开/收起功能
+            const appendixToggle = document.getElementById('appendixToggle');
+            const experimentReport = document.getElementById('experimentReport');
+            
+            if (appendixToggle && experimentReport) {
+                appendixToggle.addEventListener('click', function() {
+                    if (experimentReport.style.display === 'block') {
+                        experimentReport.style.display = 'none';
+                        appendixToggle.classList.remove('expanded');
+                    } else {
+                        experimentReport.style.display = 'block';
+                        appendixToggle.classList.add('expanded');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
